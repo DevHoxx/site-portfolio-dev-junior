@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Font Awesome com SRI (Subresource Integrity) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-XXl4v5u3XIu5j0Q7XzJ7XyT/VIc0jrybU0XZ7J+NpUGR6z0n9Dg==" crossorigin="anonymous">
+		  
+    <title>CyberPortfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">CyberDev</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Cyber Desenvolvedor</h1>
+        <p>Programador júnior especializado em tecnologias futurísticas e soluções digitais</p>
+        <button class="scroll-btn" onclick="scrollToSection('projetos')">Ver Projetos</button>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="section-title">Projetos Recentes</h2>
+        <div class="projeto-card">
+            <h3>Sistema de IA para Cibersegurança</h3>
+            <p>Desenvolvido com Python e TensorFlow</p>
+        </div>
+        <div class="projeto-card">
+            <h3>Aplicativo de Realidade Aumentada</h3>
+            <p>Criado com Unity e ARCore</p>
+        </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skill">
+            <h3>Python</h3>
+            <div class="skill-bar">
+                <div class="skill-progress"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="skill-bar">
+                <div class="skill-progress"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <form class="contato-form">
+            <input type="text" class="contato-input" placeholder="Seu nome" required>
+            <input type="email" class="contato-input" placeholder="Email" required>
+            <textarea class="contato-input" rows="4" placeholder="Mensagem" required></textarea>
+            <button type="submit" class="contato-btn">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/seu-usuario" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/seu-perfil" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com/seu-perfil" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/seu-perfil" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://t.me/seu-usuario"  target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://facebook.com/seu-perfil" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://reddit.com/user/seu-usuario" target="_blank" 
+               rel="noopener noreferrer nofollow ugc" aria-label="Reddit">
+                <i class="fab fa-reddit"></i>
+            </a>
+        </div>
+        <p>© 2077 Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 300);
+            }, 500);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.style.background = window.pageYOffset > 50 
+                ? 'rgba(10,10,10,0.95)' 
+                : 'rgba(10,10,10,0.9)';
+        });
+    </script>
+</body>
+</html>
